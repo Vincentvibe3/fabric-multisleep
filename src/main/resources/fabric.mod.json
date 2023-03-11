@@ -3,36 +3,30 @@
   "id": "fabricmultisleep",
   "version": "${version}",
 
-  "name": "Multiplayer sleep",
-  "description": "Multiplayer sleep",
+  "name": "fabricmultisleep",
+  "description": "Simple multiplayer sleep for fabric",
   "authors": [
     "vincentvibe3"
   ],
   "contact": {
+    "issues": "https://github.com/Vincentvibe3/fabric-multisleep/issues",
     "homepage": "https://github.com/Vincentvibe3/fabric-multisleep",
     "sources": "https://github.com/Vincentvibe3/fabric-multisleep"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/modid/icon.png",
 
-  "environment": "*",
+  "environment": "server",
   "entrypoints": {
     "main": [
       "io.github.vincentvibe3.sleep.Main"
     ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
-
   "depends": {
     "fabricloader": ">=0.14.6",
-    "fabric": "*",
+    "fabric": ">=0.58.0+1.19",
     "minecraft": "~1.19",
     "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

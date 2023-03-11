@@ -20,9 +20,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class Main implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
+
 	public static final Logger LOGGER = LoggerFactory.getLogger("fabricmultisleep");
 
 	private static final List<Block> beds = Arrays.asList(Blocks.BLACK_BED, Blocks.BLUE_BED, Blocks.BROWN_BED, Blocks.LIGHT_BLUE_BED, Blocks.CYAN_BED,
@@ -33,14 +31,10 @@ public class Main implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+
 		UseBlockCallback.EVENT.register((player, world, hand, hitResult) ->
 		{
 			BlockState state = world.getBlockState(hitResult.getBlockPos());
-            /* Manual spectator check is necessary because AttackBlockCallbacks
-               fire before the spectator check */
 			Block block = state.getBlock();
 			boolean isBed = false;
 			for (Block bed:beds){
@@ -88,7 +82,7 @@ public class Main implements ModInitializer {
 		ServerLifecycleEvents.SERVER_STOPPING.register((server)->{
 			executor.shutdown();
 		});
-		LOGGER.info("Sleep Ready");
+		LOGGER.info("fabricMultiSleep Ready");
 	}
 
 	private Long getNextdayTime(Long currentTime){
