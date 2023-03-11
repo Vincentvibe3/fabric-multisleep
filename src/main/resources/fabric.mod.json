@@ -15,7 +15,7 @@
   },
 
   "license": "MIT",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/fabricmultisleep/icon.png",
 
   "environment": "server",
   "entrypoints": {

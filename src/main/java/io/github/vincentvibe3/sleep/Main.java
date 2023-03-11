@@ -79,9 +79,7 @@ public class Main implements ModInitializer {
 			}
 			return ActionResult.PASS;
 		});
-		ServerLifecycleEvents.SERVER_STOPPING.register((server)->{
-			executor.shutdown();
-		});
+		ServerLifecycleEvents.SERVER_STOPPING.register((server)-> executor.shutdown());
 		LOGGER.info("fabricMultiSleep Ready");
 	}
 
